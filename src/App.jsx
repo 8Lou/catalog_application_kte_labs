@@ -7,7 +7,7 @@ import { Route, Routes } from "react-router-dom";
 const App = () => {
   return (
     <div>
-      <h1>My App</h1>
+      <h1>My catalog</h1>
 
       <Routes>
         <Route path="/" element={<One />} />
