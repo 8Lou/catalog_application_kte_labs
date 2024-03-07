@@ -4,16 +4,34 @@ import { Link } from "react-router-dom";
 
 const One = () => {
   const [users, setUsers] = useState([]);
+  const [pokemon, setPokemon] = useState(null);
+
+  const [pokemonList, setPokemonList] = useState([]);
+  const goToAddItemPage = () => {
+    ("/add-item");
+  };
 
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        setUsers(response.data);
-      })
-      .catch((error) => {
+    const fetchData = async () => {
+      try {
+        const [usersResponse, pokemonResponse] = await Promise.all([
+          axios.get("https://jsonplaceholder.typicode.com/users"),
+          axios.get("https://pokeapi.co/api/v2/pokemon/25"),
+        ]);
+
+        setUsers(usersResponse.data);
+        setPokemon(pokemonResponse.data);
+      } catch (error) {
         console.error("Error fetching data: ", error);
-      });
+      }
+
+      const pokemonListResponse = await axios.get(
+        "https://pokeapi.co/api/v2/pokemon"
+      );
+      setPokemonList(pokemonListResponse.data.results);
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -27,8 +45,30 @@ const One = () => {
         </ul>
       </Link>
 
-      <Link to="/three">
-        <button>Go to Three</button>
+      <h2>Pokemon Detail</h2>
+      {pokemon && (
+        <div>
+          <p>Name: {pokemon.name}</p>
+          <p>Height: {pokemon.height}</p>
+          <p>Weight: {pokemon.weight}</p>
+        </div>
+      )}
+
+      <h2>Pokemon List</h2>
+      {pokemonList.length > 0 ? (
+        <ul>
+          {pokemonList.map((pokemon) => (
+            <li key={pokemon.name}>
+              <Link to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading Pokemon...</p>
+      )}
+
+      <Link to="/add-item">
+        <button onClick={goToAddItemPage}>Аadd a new item</button>
       </Link>
     </div>
   );
