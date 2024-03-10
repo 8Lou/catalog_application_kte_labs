@@ -4,6 +4,8 @@ import Two from "./components/Two";
 import Three from "./components/Three";
 import { Route, Routes } from "react-router-dom";
 import AddItemPage from "./components/AddItemPage";
+import "./index.scss";
+
 const LazyComponent = React.lazy(() => import("./components/LazyComponent"));
 
 const App = () => {
@@ -36,6 +38,7 @@ const App = () => {
           }
         />
       </Routes>
+      <span>© Made by 8Lou 2024</span>
     </div>
   );
 };

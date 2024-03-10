@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import "./style.scss";
 
 const One = () => {
   const [users, setUsers] = useState([]);
@@ -43,32 +44,34 @@ const One = () => {
   };
 
   return (
-    <div>
-      <h2>Items</h2>
-      <Link to="/two">
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>{user.name}</li>
-          ))}
-        </ul>
-      </Link>
+    <div className="list-main">
+      <div className="list-container">
+        <h2>Items</h2>
+        <Link to="/two">
+          <ul className="list">
+            {users.map((user) => (
+              <li key={user.id}>{user.name}</li>
+            ))}
+          </ul>
+        </Link>
 
-      <h2>Pokemon List</h2>
-      {pokemonList.length > 0 ? (
-        <ul>
-          {pokemonList.map((pokemon) => (
-            <li key={pokemon.name}>
-              <Link to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Loading Pokemon...</p>
-      )}
+        <h2>Pokemon List</h2>
+        {pokemonList.length > 0 ? (
+          <ul className="list">
+            {pokemonList.map((pokemon) => (
+              <li key={pokemon.name}>
+                <Link to={`/pokemon/${pokemon.name}`}>{pokemon.name}</Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Loading Pokemon...</p>
+        )}
 
-      <Link to="/add-item">
-        <button>Аdd a new item</button>
-      </Link>
+        <Link to="/add-item">
+          <button>Аdd a new item</button>
+        </Link>
+      </div>
     </div>
   );
 };

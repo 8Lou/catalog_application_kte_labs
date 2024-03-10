@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import pokemonImg from "../img/pokemon.jpg";
+import "./style.scss";
 
 const Two = () => {
   const navigate = useNavigate();

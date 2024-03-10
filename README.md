@@ -1,7 +1,19 @@
 # https://8Lou.github.io/catalog_application_kte_labs
 
-## npm install react-hook-form
+---
 
-## npm install react-router-dom
+## Stack:
 
-npm install axios
+### npm install formik
+
+### npm install react-router-dom
+
+### npm install -g sass
+
+### npm install node-sass
+
+### npm install axios
+
+problems and solutions
+npm cache clear --force
+npm install sass
