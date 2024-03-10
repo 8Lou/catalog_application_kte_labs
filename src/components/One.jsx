@@ -5,13 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 const One = () => {
   const [users, setUsers] = useState([]);
   const [pokemon, setPokemon] = useState(null);
-
   const [pokemonList, setPokemonList] = useState([]);
   const navigate = useNavigate();
+  const [items, setItems] = useState([]);
 
-  const goToAddItemPage = () => {
-    navigate("/add-item");
-  };
+  // const goToAddItemPage = () => {
+  //   navigate("/add-item");
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,6 +36,12 @@ const One = () => {
     fetchData();
   }, []);
 
+  const handleAddItem = (newItem) => {
+    // Добавление нового элемента в список
+    const newItemData = { id: items.length + 1, name: newItem };
+    setItems([...items, newItemData]);
+  };
+
   return (
     <div>
       <h2>Items</h2>
@@ -46,15 +52,6 @@ const One = () => {
           ))}
         </ul>
       </Link>
-
-      <h2>Pokemon Detail</h2>
-      {pokemon && (
-        <div>
-          <p>Name: {pokemon.name}</p>
-          <p>Height: {pokemon.height}</p>
-          <p>Weight: {pokemon.weight}</p>
-        </div>
-      )}
 
       <h2>Pokemon List</h2>
       {pokemonList.length > 0 ? (
@@ -70,7 +67,7 @@ const One = () => {
       )}
 
       <Link to="/add-item">
-        <button onClick={goToAddItemPage}>Аdd a new item</button>
+        <button>Аdd a new item</button>
       </Link>
     </div>
   );

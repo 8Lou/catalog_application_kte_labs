@@ -11,6 +11,10 @@ const App = () => {
     console.log("New item added:", newItem);
   };
 
+  const handleUpdateItems = (newItem) => {
+    console.log("Updating items with new item:", newItem);
+  };
+
   return (
     <div>
       <h1>My catalog</h1>
@@ -24,7 +28,10 @@ const App = () => {
           path="/add-item"
           element={
             <React.Suspense fallback={<div>Loading...</div>}>
-              <AddItemPage onAddItem={handleAddItem} />
+              <AddItemPage
+                onAddItem={handleAddItem}
+                onUpdateItems={handleUpdateItems}
+              />
             </React.Suspense>
           }
         />
