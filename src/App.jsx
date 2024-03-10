@@ -4,6 +4,7 @@ import Two from "./components/Two";
 import Three from "./components/Three";
 import { Route, Routes } from "react-router-dom";
 import AddItemPage from "./components/AddItemPage";
+const LazyComponent = React.lazy(() => import("./components/LazyComponent"));
 
 const App = () => {
   const handleAddItem = (newItem) => {
@@ -18,10 +19,7 @@ const App = () => {
         <Route path="/" element={<One />} />
         <Route path="/two" element={<Two />} />
         <Route path="/three" element={<Three />} />
-        <Route
-          path="/add-item"
-          render={() => <AddItemPage onAddItem={handleAddItem} />}
-        />
+        <Route path="/add-item" element={<AddItemPage />} />;
       </Routes>
     </div>
   );

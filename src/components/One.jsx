@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const One = () => {
   const [users, setUsers] = useState([]);
   const [pokemon, setPokemon] = useState(null);
 
   const [pokemonList, setPokemonList] = useState([]);
+  const navigate = useNavigate();
+
   const goToAddItemPage = () => {
-    ("/add-item");
+    navigate("/add-item");
   };
 
   useEffect(() => {
@@ -68,7 +70,7 @@ const One = () => {
       )}
 
       <Link to="/add-item">
-        <button onClick={goToAddItemPage}>Аadd a new item</button>
+        <button onClick={goToAddItemPage}>Аdd a new item</button>
       </Link>
     </div>
   );
