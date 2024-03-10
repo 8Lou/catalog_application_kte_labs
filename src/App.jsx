@@ -19,7 +19,15 @@ const App = () => {
         <Route path="/" element={<One />} />
         <Route path="/two" element={<Two />} />
         <Route path="/three" element={<Three />} />
-        <Route path="/add-item" element={<AddItemPage />} />;
+        {/* <Route path="/add-item" element={<AddItemPage />} />; */}
+        <Route
+          path="/add-item"
+          element={
+            <React.Suspense fallback={<div>Loading...</div>}>
+              <AddItemPage onAddItem={handleAddItem} />
+            </React.Suspense>
+          }
+        />
       </Routes>
     </div>
   );
