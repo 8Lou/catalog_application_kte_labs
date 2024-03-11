@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/catalog_application_kte_labs/static/css/main.96336ebf.css",
+    "main.css": "/catalog_application_kte_labs/static/css/main.c6586b4a.css",
     "main.js": "/catalog_application_kte_labs/static/js/main.fc086281.js",
     "static/js/408.15d7b5d9.chunk.js": "/catalog_application_kte_labs/static/js/408.15d7b5d9.chunk.js",
     "static/media/pokemon.jpg": "/catalog_application_kte_labs/static/media/pokemon.718c663951739dfb81fe.jpg",
     "index.html": "/catalog_application_kte_labs/index.html",
-    "main.96336ebf.css.map": "/catalog_application_kte_labs/static/css/main.96336ebf.css.map",
+    "main.c6586b4a.css.map": "/catalog_application_kte_labs/static/css/main.c6586b4a.css.map",
     "main.fc086281.js.map": "/catalog_application_kte_labs/static/js/main.fc086281.js.map",
     "408.15d7b5d9.chunk.js.map": "/catalog_application_kte_labs/static/js/408.15d7b5d9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.96336ebf.css",
+    "static/css/main.c6586b4a.css",
     "static/js/main.fc086281.js"
   ]
 }
