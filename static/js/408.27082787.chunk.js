@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcatalog_application_kte_labs=self.webpackChunkcatalog_application_kte_labs||[]).push([[408],{408:(a,s,t)=>{t.r(s),t.d(s,{default:()=>l});t(43),t(184);var e=t(579);const l=()=>(0,e.jsx)("div",{children:"This is a Lazy Component..."})}}]);
-//# sourceMappingURL=408.27082787.chunk.js.map
